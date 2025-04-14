@@ -1,0 +1,56 @@
+def print_animal(choice):
+    if choice == 1:
+        # 코끼리
+        print(r"""
+         _.-- ,.--.
+       .'   .'     /
+       | @       |'..--------._
+      /      \._/              '.
+     /  .-.-                     \
+    (  /    \                     \
+    \\      '.                  | #
+     \\       \   -.           /
+      :\       |    )._____.'   \
+       "       |   /  \  |  \    )
+               |   |./'  :__ \.-'
+               '--'
+        """)
+    elif choice == 2:
+        # 사자
+        print(r"""
+        ,w.
+      ,YWMMw  ,M  ,
+     _.`"_   `"' /;,
+     \    `.    ,//  
+      `._   )  )(
+         | \_/ /
+         \__.' 
+        (__) (__)
+        """)
+    elif choice == 3:
+        # 거북이
+        print(r"""
+       _____     ____
+     /       \  |  o | 
+    |         |/ ___\| 
+    |_________/     
+     |_|_| |_|_|
+        """)
+    elif choice == 0:
+        print("프로그램을 종료합니다.")
+        return False
+    else:
+        print("올바른 숫자를 입력해주세요 (1, 2, 3, 0 중 하나)")
+    return True
+
+def main():
+    for _ in range(5):
+        try:
+            choice = int(input("1: 코끼리, 2: 사자, 3: 거북이, 0: 종료 → 숫자를 입력하세요: "))
+            if not print_animal(choice):
+                break
+        except ValueError:
+            print("숫자를 입력해주세요.")
+
+if __name__ == "__main__":
+    main()
